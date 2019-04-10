@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      Zompil
+      掘安杯Misc | Zompil
     
   </title>
   <meta name="author" content="John Doe">
@@ -115,7 +115,7 @@
 				<!-- Page title -->
 				<p>
 					
-						主页
+						当前文章&nbsp;:&nbsp;《掘安杯Misc》
 					
 				</p>
 				<!-- Progress bar -->
@@ -273,41 +273,49 @@
 		
 		<!--main-->
 		<main>
-			
-
-
-
-	<!--cart style-->
-	<div class="layout-cart">
-	<div id="layout-cart">
+			<div class="layout-post">
+	
+	
+	<div class="article-title">
 		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2019/04/10/掘安杯 Misc/" title=" 掘安杯Misc ">
-				<img src="/img/1.jpg">
-			</a>
-
-			<div class="post-text">
-				<p class="post-time">
-					四月 10日, 2019
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2019/04/10/掘安杯 Misc/" title="掘安杯Misc">
-						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-						
 	<a href="/2019/04/10/掘安杯 Misc/" itemprop="url">
 		掘安杯Misc
 	</a>
 
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						Misc：So_easy：
-下载后发现在exe下打不开，于是改后缀为txt发现一系列加密字符于是经过一系列尝试发现是base58转字符串解码得到开头为da...
-					
-				</p>
-				<p class="post-meta">
-					
+	</div>
+
+	<div class="article-meta">
+		<span>
+			
+	发布于
+	<a href="/2019/04/10/掘安杯 Misc/" itemprop="url">
+		<time datetime="2019-04-09T16:00:00.000Z" itemprop="datePublished">
+	  		2019-04-10
+	  </time>
+	</a> 
+
+	/
+	更新于
+	<a href="/2019/04/10/掘安杯 Misc/" itemprop="url">
+		<time datetime="2019-04-09T16:00:00.000Z" itemprop="dateUpdated">
+	  		2019-04-10
+	  </time>
+	</a> 	
+
+		</span>
+		/
+		<span>
+			<i class="fa fa-tags"></i>
+			
+	
+		<a href="/tags/ctf/" class=" ">
+			ctf
+		</a>
+	
+		
+		</span>
+		/
+		
 
     <span class="leancloud_visitors" id="/2019/04/10/掘安杯 Misc/_visitors" data-url="/2019/04/10/掘安杯 Misc/" data-title="掘安杯Misc">
         热度
@@ -324,130 +332,173 @@
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
     </span>
 
-					
+	</div>
 
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
+	<div class="article-content" id="article-content">
+		<h3 id="Misc："><a href="#Misc：" class="headerlink" title="Misc："></a>Misc：</h3><h5 id="So-easy："><a href="#So-easy：" class="headerlink" title="So_easy："></a>So_easy：</h5><blockquote>
+<p>下载后发现在exe下打不开，于是改后缀为txt发现一系列加密字符<br><img src="https://s2.ax1x.com/2019/04/09/AIon3t.jpg" alt="image"><br>于是经过一系列尝试发现是base58转字符串<br>解码得到<br><img src="https://s2.ax1x.com/2019/04/09/AIbai4.jpg" alt="image"><br>开头为data：image 猜测为图片的base64码<br>再base64转图片得到一个二维码扫码即可得到flag<br>flag：jactf{base58_base64_flag_very_easy}</p>
+</blockquote>
+<h5 id="小梳子："><a href="#小梳子：" class="headerlink" title="小梳子："></a>小梳子：</h5><p>下载后是一个。cap的文件，根据提示猜测需要用字典爆破，<br>于是在kali中创建字典<br><img src="https://s2.ax1x.com/2019/04/09/AIqlkD.jpg" alt="image"><br>然后根据进行爆破<br><img src="https://s2.ax1x.com/2019/04/09/AIq3fH.jpg" alt="image"><br>选择1即可跑出手机号<br><img src="https://s2.ax1x.com/2019/04/09/AIqd78.jpg" alt="image"></p>
+<h5 id="该死的温柔："><a href="#该死的温柔：" class="headerlink" title="该死的温柔："></a>该死的温柔：</h5><blockquote>
+<p>查看图片属性提示为：guess <br><br>在kali中有outguess的隐写工具：<br><br>如果没有：git clone <a href="https://github.com/crorvick/outguess" target="_blank" rel="noopener">https://github.com/crorvick/outguess</a><br><br>然后在outguess文件夹中进入终端命令：./configure&amp;&amp; make &amp;&amp; make install<br><br>然后猜测guess为密码对flag.jpg进行解密:<br>执行命令：outguess -k “guess” -r flag.jpg flag.txt<br>查看flag.txt即可得到flag<br><img src="https://s2.ax1x.com/2019/04/09/AIxOHI.jpg" alt="image"></p>
+</blockquote>
+<h5 id="真的不是图片"><a href="#真的不是图片" class="headerlink" title="真的不是图片"></a>真的不是图片</h5><p> 放在Kali中binwalk发现zip文件但分离不出来<br><img src="https://s2.ax1x.com/2019/04/09/AIz2RS.jpg" alt="image"><br>猜测文件被修改过于是在winhex中搜索14000000：因为zip的文件头是504b030414000000<br><img src="https://s2.ax1x.com/2019/04/09/AoSI6e.jpg" alt="image"><br>发现504b0304被修改为ja66<br><br>修改回来在继续放在kali中binwalk<br>分离出一个zip的加密文件<br>密码为ja66打开发现很多文件夹</p>
+<blockquote>
+<p> 写脚本：<br><br>import re  <br><br>str1=’’  <br><br>for i in range(0,32):  <br><br>    str1+=open(‘subject/‘+str(i)+’/‘+str(i)+’.txt’,’r’).read()<br><br>print str1</p>
+</blockquote>
+<p>得到：amFjdGZ7NjRzZTY0XzFzXzUwX2MwMDF9<br><br>base64解密即可得到flag</p>
+<h5 id="你对网站做了什么："><a href="#你对网站做了什么：" class="headerlink" title="你对网站做了什么："></a>你对网站做了什么：</h5><p>打开shell.pacp文件在里面查看tcp流可以发现是加密操作<br><img src="https://s2.ax1x.com/2019/04/09/AoVmj0.jpg" alt="image"><br>又发现了cat/flag.txt加密后的字符<br><img src="https://s2.ax1x.com/2019/04/09/AoVZ3n.jpg" alt="image"></p>
+<blockquote>
+<p>于是写解密操作：<br>&lt;?php<br><br>echo gzuncompress(base64_decode(‘eJxLy0lMrw6NTzPMS4n3TVWsBQAz4wXi’));<br><br>?&gt;<br>即可得到flag</p>
+</blockquote>
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/img/1.jpg"></div>
 
-
-
-	<script>
-		var appid = 'dX--',
-            appkey = 'dx--';	  
-        AnnieLeancloud(appid, appkey);         
-	</script>
-    
-
-
- 
-				</p>
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
 			</div>
-		</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2019/03/01/上海嘉伟思杯/" title=" 上海嘉伟思杯 ">
-				<img src="/img/1.jpg">
+		
+			<a href="/2019/03/01/上海嘉伟思杯/" title="上海嘉伟思杯" rel="next">
+				下一篇&raquo;
 			</a>
-
-			<div class="post-text">
-				<p class="post-time">
-					三月 1日, 2019
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2019/03/01/上海嘉伟思杯/" title="上海嘉伟思杯">
-						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-						
-	<a href="/2019/03/01/上海嘉伟思杯/" itemprop="url">
-		上海嘉伟思杯
-	</a>
-
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						土肥原贤二通过’发现注入点直接利用报错注入依次注出库，表，列，以及flag‘ or extractvalue(1,concat(0x5c,(select ...
-					
-				</p>
-				<p class="post-meta">
-					
-
-    <span class="leancloud_visitors" id="/2019/03/01/上海嘉伟思杯/_visitors" data-url="/2019/03/01/上海嘉伟思杯/" data-title="上海嘉伟思杯">
-        热度
-        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
-    </span>
-    
-    /
-
-
-
-    <span class="leancloud_likes" id="/2019/03/01/上海嘉伟思杯/_likes" data-url="/2019/03/01/上海嘉伟思杯/" data-title="上海嘉伟思杯" rel="unlike">
-        喜欢
-        <i class="fa fa-heart"></i>
-        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
-    </span>
-
-					
-
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
-
-
-
-	<script>
-		var appid = 'dX--',
-            appkey = 'dx--';	  
-        AnnieLeancloud(appid, appkey);         
-	</script>
-    
-
-
- 
-				</p>
-			</div>
+			
+	</span>
+      		
+			</div>	
 		</div>
 		
-	</div>
-	
-	
-	<div id="pagination">
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	<ul>
 		
-	</div>
+				<li>
+					<div>
+						<a href="/2019/03/01/上海嘉伟思杯/" title="上海嘉伟思杯">
+							上海嘉伟思杯
+						</a>
+						<p>
+							土肥原贤二通过’发现注入点直接利用报错注入依次注出库，表，列，以及flag‘ or extractvalue(1,concat(0x5c,(select database()))) or ‘flag:flag{20_welcome_1...
+						</p>
+					</div>
+
+					<a href="/2019/03/01/上海嘉伟思杯/" title="上海嘉伟思杯">				
+						<img src="/img/1.jpg" class="relateImg" alt="上海嘉伟思杯">
+					</a>
+				</li>											
+		
+		
+	</ul>
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know 【表情】-->
+			
+		
+		
+	
 
 </div>
-	
+			</div>
+		</div>	
+	</div>
+</div>
 
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+
+	<script>
+		var appid = 'dX--',
+            appkey = 'dx--';	  
+        AnnieLeancloud(appid, appkey);         
+	</script>
+    
+
+
+ 
+
+<!-- show math formula -->
+
+
+
+
+<!-- TODO: There seems to be a bug when you close the post gallery! -->
+<link rel="stylesheet" href="/plugin/lightgallery/css/lightgallery.css">
+<script src="/plugin/lightgallery/js/jquery-1.11.0.min.js"></script>
+<script src="/plugin/lightgallery/js/lightgallery-all.min.js"></script>
+
+<script type="text/javascript">
+	var postTitle = $('.article-title a').text() ? $('.article-title a').text() : "No post title!";
+	$('.article-content img').each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		$(this).wrap('<div class="img-responsive" data-src="' + imgPath + '" data-responsive="' + imgPath + '" data-sub-html="<p>图片 ' + imgTitle + '</p><h4>文章' + postTitle + '</h4>"></div>');
+	});
+
+	$('.article-content').lightGallery({
+		mode: 'lg-slide',
+		selector: '.img-responsive',
+		share: false,
+		zoom: false,
+		download: false
+	});
+	//TODO：支持video
+</script>
+
+<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+		
+
+		<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	
 		</main>
 		
 		<!--footer-->
@@ -510,14 +561,10 @@
 	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 	
 
-		<span id="busuanzi_container_site_pv">
-	    	本站总访问量<span id="busuanzi_value_site_pv"></span>次
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
 		</span>
 
-		<span id="busuanzi_container_site_uv">
-	  		本站访客数<span id="busuanzi_value_site_uv"></span>人次
-		</span>
-		
 	
 
 
