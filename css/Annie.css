@@ -25,6 +25,7 @@ body {
 	word-spacing: 1px;
 	letter-spacing: 1px;
 	word-break: break-all;
+
 	/*
 		word-wrap: break-word;//针对单词本身换行做处理
 		word-break: break-all;//针对句子本身换行做处理
