@@ -1,0 +1,1199 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+	<!DOCTYPE html>
+	<html class="scrollbar">
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      上海嘉伟思杯 | Zompil
+    
+  </title>
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+    <!-- jquery -->
+	<script src="/js/jquery-2.1.1.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="transition">
+					<div class="three-bounce1"></div>
+					<div class="three-bounce2"></div>
+					<div class="three-bounce3"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/2.jpg" data-random-max="110" data-random-src="https://github.com/oozpc/zompil.github.io/img">
+	<div class="mask">
+		<div class="h-header">
+			<div id="logo-S">
+				
+					<a href="/">
+						<img src="/img/logo3.png" alt="Logo">
+					</a>
+				
+			</div>
+			<!-- Navigation in header(id="navigation-S") -->
+			<div id="navigation-S">
+				<ul>
+					
+						<li class="menu-home">
+							<a href="/" class="menu-item-home">主页</a>
+						</li>
+					
+						<li class="menu-archive">
+							<a href="/archives" class="menu-item-archive">归档</a>
+						</li>
+					
+						<li class="menu-categories">
+							<a href="/categories" class="menu-item-categories">分类</a>
+						</li>
+					
+						<li class="menu-tags">
+							<a href="/tags" class="menu-item-tags">标签</a>
+						</li>
+					
+						<li class="menu-about">
+							<a href="/about" class="menu-item-about">关于</a>
+						</li>
+					
+						<li class="menu-gallery">
+							<a href="/gallery" class="menu-item-gallery">相册</a>
+						</li>
+					
+
+					
+						<li class="menu-search">
+							<a href="javascript:;" class="popup-trigger" title="Search">搜索</a>
+						</li>
+					
+				</ul>			
+			</div>				
+		</div>
+
+		<div class="h-body">	
+			<!-- motto -->
+			
+				<div id="page-motto">
+					<p class="motto">
+						
+					</p>
+				</div>
+			
+
+			<div id="navigation-H">
+				<!-- Page title -->
+				<p>
+					
+						当前文章&nbsp;:&nbsp;《上海嘉伟思杯》
+					
+				</p>
+				<!-- Progress bar -->
+				<div id="progress-bar"></div>
+
+				<!-- Progress percent -->
+				<div id="progress-percentage">
+					<h1>0.0%</h1>
+				</div>
+			</div>
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<ul>
+				<li>
+					<a><i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>切换背景</a>
+				</li>
+				<li>
+					<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down"></i>继续阅读</a>
+				</li>
+				<li>
+					<a href="https://github.com/Sariay/hexo-theme-Annie" target="_blank"><i class="fa fa-download"></i>克隆主题</a>
+				</li>
+			</ul>
+		</div>
+		
+		<!-- This is only a demo, please go to "https://time.is" to set your city time! -->
+<style type="text/css">
+	.header-date {
+		position: absolute;
+		left: 40px;
+		bottom: 30px;
+		writing-mode: tb-rl;
+		font-size: 36px;
+	}	
+	.header-date a {
+		border-bottom: none;
+	}
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			position: absolute;
+			left: 40px;
+			bottom: 30px;
+			writing-mode: tb-rl;
+			font-size: 20px;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+</div></header>
+
+<!-- Navigation in div(id="navigation-H") -->
+<a class="nav-trigger">
+	<span></span>
+</a>
+
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+			
+				<li class="menu-home">
+					<a href="/" class="menu-item-home">主页</a>
+				</li>
+			
+				<li class="menu-archive">
+					<a href="/archives" class="menu-item-archive">归档</a>
+				</li>
+			
+				<li class="menu-categories">
+					<a href="/categories" class="menu-item-categories">分类</a>
+				</li>
+			
+				<li class="menu-tags">
+					<a href="/tags" class="menu-item-tags">标签</a>
+				</li>
+			
+				<li class="menu-about">
+					<a href="/about" class="menu-item-about">关于</a>
+				</li>
+			
+				<li class="menu-gallery">
+					<a href="/gallery" class="menu-item-gallery">相册</a>
+				</li>
+			
+
+			
+				<li class="menu-search">
+					<a href="javascript:;" class="popup-trigger" title="Search">搜索</a>
+				</li>
+			
+		</ul>
+	</div>
+
+	<div class="nav-footer">
+		<ul>
+	
+		
+			<li>
+				<a href="http://github.com/" title="Github" target="_blank">
+					<i class="fa fa-github"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="http://github.com/" title="Weibo" target="_blank">
+					<i class="fa fa-weibo"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="mailto:http://github.com/" title="Email" target="_blank">
+					<i class="fa fa-envelope-o"></i>
+				</a>
+			</li>
+		
+
+		
+			<li>
+				<a href="http://github.com/" title="QQ" target="_blank">
+					<i class="fa fa-qq"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="http://github.com/" title="Twitter" target="_blank">
+					<i class="fa fa-twitter"></i>
+				</a>
+			</li>
+		
+	 
+</ul>
+	</div>
+</nav>
+
+		
+		<!--main-->
+		<main>
+			<div class="layout-post">
+	
+	
+	<div class="article-title">
+		
+	<a href="/2019/03/01/上海嘉伟思杯/" itemprop="url">
+		上海嘉伟思杯
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			
+	发布于
+	<a href="/2019/03/01/上海嘉伟思杯/" itemprop="url">
+		<time datetime="2019-03-01T00:00:00.000Z" itemprop="datePublished">
+	  		2019-03-01
+	  </time>
+	</a> 
+
+	/
+	更新于
+	<a href="/2019/03/01/上海嘉伟思杯/" itemprop="url">
+		<time datetime="2019-03-01T00:00:00.000Z" itemprop="dateUpdated">
+	  		2019-04-10
+	  </time>
+	</a> 	
+
+		</span>
+		/
+		<span>
+			<i class="fa fa-tags"></i>
+			
+	
+		<a href="/tags/ctf/" class=" ">
+			ctf
+		</a>
+	
+		
+		</span>
+		/
+		
+
+    <span class="leancloud_visitors" id="/2019/03/01/上海嘉伟思杯/_visitors" data-url="/2019/03/01/上海嘉伟思杯/" data-title="上海嘉伟思杯">
+        热度
+        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+    </span>
+    
+    /
+
+
+
+    <span class="leancloud_likes" id="/2019/03/01/上海嘉伟思杯/_likes" data-url="/2019/03/01/上海嘉伟思杯/" data-title="上海嘉伟思杯" rel="unlike">
+        喜欢
+        <i class="fa fa-heart"></i>
+        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
+    </span>
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<h4 id="土肥原贤二"><a href="#土肥原贤二" class="headerlink" title="土肥原贤二"></a>土肥原贤二</h4><p>通过’发现注入点<br>直接利用报错注入依次注出库，表，列，以及flag<br>‘ or extractvalue(1,concat(0x5c,(select database()))) or ‘<br><img src="https://s2.ax1x.com/2019/03/30/ADZowD.jpg" alt="image"><br>flag:flag{20_welcome_19}</p>
+<h4 id="吴佩孚"><a href="#吴佩孚" class="headerlink" title="吴佩孚"></a>吴佩孚</h4><p>打开发现一段base64代码<br>base64解密后是一段jsfuck的代码<br>通过谷歌的控制台解密可得flag<br><img src="https://s2.ax1x.com/2019/03/30/ADeX4J.jpg" alt="image"></p>
+<h4 id="死亡真相"><a href="#死亡真相" class="headerlink" title="死亡真相"></a>死亡真相</h4><p>将WAV文件放入Audacity中<br>查看频普图发现提示<br><img src="https://s2.ax1x.com/2019/03/30/ADZJoQ.jpg" alt="image"><br>通过查看文件属性发现多次出现0<br>于是将_替换为0 ：85a9d4517d47250b908cbc9fd0554216<br>再由md5解密可得flag：hsd132456</p>
+<h4 id="日军空袭"><a href="#日军空袭" class="headerlink" title="日军空袭"></a>日军空袭</h4><p>打开后是一段base64代码解码后发现任然是base64代码后面也是<br>直到解到最后 fB__l621a4h4g_ai{B}i&amp;<br>然后通过排序得到flag:flag{B64_&amp;_2hai_14i}</p>
+<h4 id="戴星炳"><a href="#戴星炳" class="headerlink" title="戴星炳"></a>戴星炳</h4><p>观察发现：需要脚本提交<br>脚本：<br><img src="https://s2.ax1x.com/2019/03/30/ADVLrT.jpg" alt="image"><br>脚本运行可得flag</p>
+<h4 id="大美晚报"><a href="#大美晚报" class="headerlink" title="大美晚报"></a>大美晚报</h4><p>用16进制工具打开发现隐藏压缩包</p>
+<p>在kali虚拟机中binwalk和foremost得到一个压缩包</p>
+<p>打开压缩包发现提示：管理员使用了他的QQ号进行加密 开始进行爆破： 密码：674290437</p>
+<p>得到flag：flag{d6@YX$_m^aa0}</p>
+<h4 id="潘汉年"><a href="#潘汉年" class="headerlink" title="潘汉年"></a>潘汉年</h4><p>根据密文: bg[<code>sZ*Zg&#39;dPfP</code>VM_SXVd<br>bg[`  的ascii码为98 103 91 96<br>flag  的ascii码为102 108 97 103<br>得知flag为密文的ascii码从第一个加4后面再依次+1</p>
+<p>通过脚本<br><img src="https://s2.ax1x.com/2019/03/30/ADZnJA.jpg" alt="image"></p>
+<p>可得到flag为： flag{c4es4r_variation}</p>
+<h4 id="晴气庆胤"><a href="#晴气庆胤" class="headerlink" title="晴气庆胤"></a>晴气庆胤</h4><p>查看原代码发现一段提示代码是md5碰撞<br>通过抓包修改post数据<br><img src="https://s2.ax1x.com/2019/03/30/ADuMtg.jpg" alt="image"></p>
+<h5 id="作战计划"><a href="#作战计划" class="headerlink" title="作战计划"></a>作战计划</h5><p>进入发现是 海洋cms漏洞</p>
+<p>存在任意代码执行</p>
+<p>原理详见：<a href="http://0day5.com/archives/4249/" target="_blank" rel="noopener">http://0day5.com/archives/4249/</a></p>
+<p>构建playload：<a href="http://47.103.43.235:84/search.php?searchtype=5&amp;tid=6&amp;year=2014);assert($_POST[1]);//" target="_blank" rel="noopener">http://47.103.43.235:84/search.php?searchtype=5&amp;tid=6&amp;year=2014);assert($_POST[1]);//</a><br>用菜刀连接可得到flag </p>
+<h4 id="池步洲"><a href="#池步洲" class="headerlink" title="池步洲"></a>池步洲</h4><p>从原代码中发现隐藏文件index.phps<br>发先代码泄露<br>通过数组绕过构建post：<br>name[]=1&amp;password[]=2<br>发现flag<img src="https://s2.ax1x.com/2019/03/30/ADnmi4.jpg" alt="image"></p>
+<h4 id="冈村宁次"><a href="#冈村宁次" class="headerlink" title="冈村宁次"></a>冈村宁次</h4><p>参数为==QM 发现传递的参数为base64反转</p>
+<p>所以测试一下：<br>传递参数：if(1,1,2)  编码后为：pIDLxwSMoYWa</p>
+<p><img src="https://s2.ax1x.com/2019/03/31/ADH40O.jpg" alt="image"></p>
+<p>传递参数：if(0,1,2)  编码后为：pIDLxwCMoYWa</p>
+<p><img src="https://s2.ax1x.com/2019/03/31/ADHR6x.jpg" alt="image"></p>
+<p>通过一系列尝试 发现了 过滤了 空格和等号</p>
+<p>其中 空格用 /*a*/ 绕过<br>等号用 like 绕过</p>
+<p>于是编写脚本<br><img src="https://s2.ax1x.com/2019/03/31/ADbSAg.jpg" alt="image"><br>得到flag：flag{s9li_1s_s0_e4sY}</p>
+<h4 id="袁殊"><a href="#袁殊" class="headerlink" title="袁殊"></a>袁殊</h4><p>解题步骤：<br>下载文件解压：得到两个文件 </p>
+<p>用kali linux的  openssl </p>
+<pre><code>openssl rsa -pubin -text -modulus -in warmup -in RSA256/RSA256/gy.key
+
+得到：
+Public-Key: (256 bit)
+Modulus:
+    00:a9:bd:4c:7a:77:63:37:0a:04:2f:e6:be:c7:dd:
+    c8:41:60:2d:b9:42:c7:a3:62:d1:b5:d3:72:a4:d0:
+    89:12:d9
+Exponent: 65537 (0x10001)
+Modulus=A9BD4C7A7763370A042FE6BEC7DDC841602DB942C7A362D1B5D372A4D08912D9
+writing RSA key
+-----BEGIN PUBLIC KEY-----
+MDwwDQYJKoZIhvcNAQEBBQADKwAwKAIhAKm9THp3YzcKBC/mvsfdyEFgLblCx6Ni
+0bXTcqTQiRLZAgMBAAE=
+-----END PUBLIC KEY-----
+</code></pre><p>可以看到Exponent: 65537，这里成为e<br>n的十六进制是Modules：A9BD4C7A7763370A042FE6BEC7DDC841602DB942C7A362D1B5D372A4D08912D9<br>用python转成转成十进制：</p>
+<pre><code>&gt;python
+Python 3.6.4 (v3.6.4:d48eceb, Dec 19 2017, 06:54:40) [MSC v.1900 64 bit (AMD64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; a=0xA9BD4C7A7763370A042FE6BEC7DDC841602DB942C7A362D1B5D372A4D08912D9
+&gt;&gt;&gt; a
+76775333340223961139427050707840417811156978085146970312315886671546666259161
+
+
+再将n进行因式分解来得到我p和q (使用http://factordb.com/)
+
+p=273821108020968288372911424519201044333
+q=280385007186315115828483000867559983517
+</code></pre><p>最后写好脚本，得出flag：</p>
+<pre><code>#coding:utf-8 
+
+import gmpy 
+
+import rsa 
+
+p = 273821108020968288372911424519201044333 
+
+q = 280385007186315115828483000867559983517 
+
+n = 76775333340223961139427050707840417811156978085146970312315886671546666259161 
+
+e = 65537 
+
+d = int(gmpy.invert(e , (p-1) * (q-1))) 
+
+privatekey = rsa.PrivateKey(n , e , d , p , q)      #根据已知参数，计算私钥 
+
+with open(&quot;./fllllllag.txt&quot; , &quot;rb&quot;) as f: 
+
+    print(rsa.decrypt(f.read(), privatekey).decode())       #使用私钥对密文进行解密，并打印 
+</code></pre><h4 id="obfuse"><a href="#obfuse" class="headerlink" title="obfuse"></a>obfuse</h4><p>32位ELF文件，无壳，载入IDA中通过关键字符串查找关键代码<br><img src="https://s2.ax1x.com/2019/03/30/ADiSP0.png" alt><br>但是发现f5不好使，只能看汇编，首先输出“password：”，然后再从缓存区读取一串字符串，进入到sub_8048580进行验证，若返回0，则输入的是错误的，若返回1则输入的是正确的<br><img src="https://s2.ax1x.com/2019/03/30/ADipGV.png" alt> </p>
+<p>在sub_8048580函数中是一位一位的check</p>
+<pre><code>_BOOL4 __cdecl sub_8048580(int a1, signed int a2)
+{
+  signed int v2; // edx
+  char v3; // al
+  _BOOL4 result; // eax
+  char v5[33]; // [esp+Ch] [ebp-A0h]
+  char b20_1; // [esp+2Dh] [ebp-7Fh]
+  char b1f_1; // [esp+2Eh] [ebp-7Eh]
+  char b1e_1; // [esp+30h] [ebp-7Ch]
+  char b1d_1; // [esp+31h] [ebp-7Bh]
+  char b1c_1; // [esp+32h] [ebp-7Ah]
+  char b1b_1; // [esp+33h] [ebp-79h]
+  char b1a_1; // [esp+35h] [ebp-77h]
+  char b19_1; // [esp+36h] [ebp-76h]
+  char b18_1; // [esp+37h] [ebp-75h]
+  char b17_1; // [esp+38h] [ebp-74h]
+  char b16_1; // [esp+39h] [ebp-73h]
+  char b15_1; // [esp+3Ah] [ebp-72h]
+  char b14_1; // [esp+3Ch] [ebp-70h]
+  char b13_0; // [esp+3Dh] [ebp-6Fh]
+  char b12_0; // [esp+3Eh] [ebp-6Eh]
+  char b11_0; // [esp+3Fh] [ebp-6Dh]
+  char b10_0; // [esp+40h] [ebp-6Ch]
+  char bf_0; // [esp+41h] [ebp-6Bh]
+  char be_0; // [esp+42h] [ebp-6Ah]
+  char bd_0; // [esp+43h] [ebp-69h]
+  char bc_1; // [esp+44h] [ebp-68h]
+  char bb_1; // [esp+45h] [ebp-67h]
+  char ba_1; // [esp+56h] [ebp-56h]
+  char b9_0; // [esp+7Ch] [ebp-30h]
+  char b8_0; // [esp+7Dh] [ebp-2Fh]
+  char b7_0; // [esp+7Eh] [ebp-2Eh]
+  char b6_0; // [esp+7Fh] [ebp-2Dh]
+  char b5_1; // [esp+80h] [ebp-2Ch]
+  char b4_1; // [esp+81h] [ebp-2Bh]
+  char b3_1; // [esp+82h] [ebp-2Ah]
+  char b2_1; // [esp+83h] [ebp-29h]
+  char b1_1; // [esp+85h] [ebp-27h]
+  unsigned int v38; // [esp+8Ch] [ebp-20h]
+
+  v38 = __readgsdword(0x14u);
+  v2 = a2;
+  while ( 2 )
+  {
+    memset(v5, 0, 0x80u);
+    v3 = *(_BYTE *)(a1 + v2);
+    v5[(v3 + 64) % 128] = 1;
+    if ( (unsigned __int8)(v3 - 10) &lt;= 0x70u )
+    {
+      switch ( v3 )
+      {
+        case &#39;\n&#39;:
+          return v2 == 13 &amp;&amp; ba_1 != 0;
+        case &#39;0&#39;:
+          if ( v2 || !b9_0 )
+            return 0;
+          v2 = 1;
+          continue;
+        case &#39;1&#39;:
+          if ( v2 == 14 &amp;&amp; b8_0 )
+            goto LABEL_12;
+          return 0;
+        case &#39;2&#39;:
+          if ( v2 == 20 &amp;&amp; b7_0 )
+            goto LABEL_15;
+          return 0;
+        case &#39;3&#39;:
+          if ( v2 != 89 || !b6_0 )
+            return 0;
+          v2 = 90;
+          continue;
+        case &#39;4&#39;:
+          if ( v2 != 15 || !b5_1 )
+            return 0;
+          v2 = 16;
+          continue;
+        case &#39;5&#39;:
+          if ( v2 != 14 || !b4_1 )
+            return 0;
+LABEL_12:
+          v2 = 15;
+          continue;
+        case &#39;6&#39;:
+          if ( v2 != 12 || !b3_1 )
+            return 0;
+          v2 = 13;
+          continue;
+        case &#39;7&#39;:
+          if ( v2 != 5 || !b2_1 )
+            return 0;
+          v2 = 6;
+          continue;
+        case &#39;8&#39;:
+          result = 0;
+          if ( b1_1 )
+            result = v2 == 33 || v2 == 2;
+          return result;
+        case &#39;9&#39;:
+          if ( v2 != 1 || !b1_1 )
+            return 0;
+          v2 = 2;
+          continue;
+        case &#39;a&#39;:
+          if ( v2 != 35 || !b20_1 )
+            return 0;
+          v2 = 36;
+          continue;
+        case &#39;b&#39;:
+          if ( v2 != 11 || !b1f_1 )
+            return 0;
+          v2 = 12;
+          continue;
+        case &#39;c&#39;:
+          if ( v2 != 32 || !b20_1 )
+            return 0;
+          v2 = 33;
+          continue;
+        case &#39;d&#39;:
+          if ( v2 != 3 || !b1e_1 )
+            return 0;
+          v2 = 4;
+          continue;
+        case &#39;e&#39;:
+          if ( v2 != 7 || !b1d_1 )
+            return 0;
+          v2 = 8;
+          continue;
+        case &#39;f&#39;:
+          if ( !b1c_1 || v2 != 8 &amp;&amp; v2 != 4 )
+            return 0;
+          goto LABEL_53;
+        case &#39;g&#39;:
+          return v2 == 12 &amp;&amp; b10_0 != 0;
+        case &#39;h&#39;:
+          if ( v2 != 13 || !b1b_1 )
+            return 0;
+          v2 = 14;
+          continue;
+        case &#39;i&#39;:
+          if ( v2 != 9 || !b1a_1 )
+            return 0;
+          v2 = 10;
+          continue;
+        case &#39;j&#39;:
+          if ( v2 != 10 || !b19_1 )
+            return 0;
+          v2 = 11;
+          continue;
+        case &#39;k&#39;:
+          return v2 == 12 &amp;&amp; b18_1 != 0;
+        case &#39;l&#39;:
+          if ( v2 != 19 || !b17_1 )
+            return 0;
+          v2 = 20;
+          continue;
+        case &#39;m&#39;:
+          if ( v2 != 17 || !b16_1 )
+            return 0;
+          v2 = 18;
+          continue;
+        case &#39;n&#39;:
+          return v2 == 18 &amp;&amp; b16_1 != 0;
+        case &#39;o&#39;:
+          if ( !b15_1 || v2 != 6 &amp;&amp; v2 != 28 )
+            return 0;
+LABEL_53:
+          ++v2;
+          continue;
+        case &#39;p&#39;:
+          if ( v2 != 30 || !b14_1 )
+            return 0;
+          v2 = 31;
+          continue;
+        case &#39;q&#39;:
+          if ( v2 != 29 || !b13_0 )
+            return 0;
+          v2 = 30;
+          continue;
+        case &#39;r&#39;:
+          if ( v2 != 20 || !b12_0 )
+            return 0;
+LABEL_15:
+          v2 = 21;
+          continue;
+        case &#39;s&#39;:
+          if ( v2 != 25 || !b11_0 )
+            return 0;
+          v2 = 26;
+          continue;
+        case &#39;t&#39;:
+          return v2 == 24 &amp;&amp; b12_0 != 0;
+        case &#39;u&#39;:
+          if ( v2 != 26 || !bf_0 )
+            return 0;
+          v2 = 27;
+          continue;
+        case &#39;v&#39;:
+          if ( v2 != 2 || !be_0 )
+            return 0;
+          v2 = 3;
+          continue;
+        case &#39;w&#39;:
+          if ( v2 != 6 || !bd_0 )
+            return 0;
+          v2 = 7;
+          continue;
+        case &#39;x&#39;:
+          if ( v2 != 22 || !bc_1 )
+            return 0;
+          v2 = 23;
+          continue;
+        case &#39;y&#39;:
+          if ( v2 != 23 || !bb_1 )
+            return 0;
+          v2 = 24;
+          continue;
+        case &#39;z&#39;:
+          return v2 == 21 &amp;&amp; b20_1 != 0;
+        default:
+          return 0;
+      }
+    }
+    return 0;
+  }
+}
+</code></pre><p>根据switch中case的值和case中的if条件就可以反推出来正确的flag<br> flag：09vdf7wefijbk</p>
+<h4 id="Auth-exe"><a href="#Auth-exe" class="headerlink" title="Auth.exe"></a>Auth.exe</h4><p>32位的windows上可执行文件，无壳，先运行一下程序：<br><img src="https://s2.ax1x.com/2019/03/30/ADiCxU.png" alt> </p>
+<p>同样也是载入IDA中通过关键字符串查找关键代码（main函数），本函数前面定义了一大堆数据，最后经过sub_401500处理</p>
+<pre><code>int __cdecl main(int argc, const char **argv, const char **envp)
+{
+  const CHAR *v3; // ebx
+  HMODULE v4; // eax
+  void (__stdcall *v5)(HMODULE, LPCSTR); // eax
+  char v7; // [esp+1h] [ebp-157h]
+  char v8[4]; // [esp+15h] [ebp-143h]
+  int v9; // [esp+20h] [ebp-138h]
+  int v10; // [esp+26h] [ebp-132h]
+  int v11; // [esp+2Ah] [ebp-12Eh]
+  int v12; // [esp+2Eh] [ebp-12Ah]
+  int v13; // [esp+32h] [ebp-126h]
+  int v14; // [esp+36h] [ebp-122h]
+  int v15; // [esp+3Ah] [ebp-11Eh]
+  __int16 v16; // [esp+3Eh] [ebp-11Ah]
+  int v17; // [esp+40h] [ebp-118h]
+  int v18; // [esp+44h] [ebp-114h]
+  int v19; // [esp+48h] [ebp-110h]
+  int v20; // [esp+4Ch] [ebp-10Ch]
+  int v21; // [esp+50h] [ebp-108h]
+  int v22; // [esp+54h] [ebp-104h]
+  int v23; // [esp+58h] [ebp-100h]
+  int v24; // [esp+5Ch] [ebp-FCh]
+  int v25; // [esp+60h] [ebp-F8h]
+  int v26; // [esp+64h] [ebp-F4h]
+  int v27; // [esp+68h] [ebp-F0h]
+  int v28; // [esp+6Ch] [ebp-ECh]
+  int v29; // [esp+70h] [ebp-E8h]
+  char v30; // [esp+74h] [ebp-E4h]
+  int a_2; // [esp+75h] [ebp-E3h]
+  int v32; // [esp+79h] [ebp-DFh]
+  int v33; // [esp+7Dh] [ebp-DBh]
+  int v34; // [esp+81h] [ebp-D7h]
+  int v35; // [esp+85h] [ebp-D3h]
+  int v36; // [esp+89h] [ebp-CFh]
+  int v37; // [esp+8Dh] [ebp-CBh]
+  int v38; // [esp+91h] [ebp-C7h]
+  __int16 v39; // [esp+95h] [ebp-C3h]
+  int a_1; // [esp+97h] [ebp-C1h]
+  int v41; // [esp+9Bh] [ebp-BDh]
+  int v42; // [esp+9Fh] [ebp-B9h]
+  int v43; // [esp+A3h] [ebp-B5h]
+  int v44; // [esp+A7h] [ebp-B1h]
+  int v45; // [esp+ABh] [ebp-ADh]
+  int v46; // [esp+AFh] [ebp-A9h]
+  int v47; // [esp+B3h] [ebp-A5h]
+  char v48; // [esp+B7h] [ebp-A1h]
+  int v49; // [esp+B8h] [ebp-A0h]
+  int v50; // [esp+BEh] [ebp-9Ah]
+  int v51; // [esp+C2h] [ebp-96h]
+  int v52; // [esp+C6h] [ebp-92h]
+  int v53; // [esp+CAh] [ebp-8Eh]
+  int v54; // [esp+CEh] [ebp-8Ah]
+  int v55; // [esp+D2h] [ebp-86h]
+  int v56; // [esp+D6h] [ebp-82h]
+  int v57; // [esp+DAh] [ebp-7Eh]
+  char v58; // [esp+DEh] [ebp-7Ah]
+  int v59; // [esp+DFh] [ebp-79h]
+  int v60; // [esp+E3h] [ebp-75h]
+  int v61; // [esp+E7h] [ebp-71h]
+  int v62; // [esp+EBh] [ebp-6Dh]
+  int v63; // [esp+EFh] [ebp-69h]
+  int v64; // [esp+F3h] [ebp-65h]
+  int v65; // [esp+F7h] [ebp-61h]
+  int v66; // [esp+FBh] [ebp-5Dh]
+  __int16 v67; // [esp+FFh] [ebp-59h]
+  int v68; // [esp+101h] [ebp-57h]
+  int v69; // [esp+105h] [ebp-53h]
+  char v70; // [esp+109h] [ebp-4Fh]
+  int v71; // [esp+10Ah] [ebp-4Eh]
+  int v72; // [esp+10Eh] [ebp-4Ah]
+  int v73; // [esp+112h] [ebp-46h]
+  int v74; // [esp+116h] [ebp-42h]
+  int v75; // [esp+11Ah] [ebp-3Eh]
+  int v76; // [esp+11Eh] [ebp-3Ah]
+  int v77; // [esp+122h] [ebp-36h]
+  int v78; // [esp+126h] [ebp-32h]
+  int v79; // [esp+12Ah] [ebp-2Eh]
+  int v80; // [esp+12Eh] [ebp-2Ah]
+  int v81; // [esp+132h] [ebp-26h]
+  int v82; // [esp+136h] [ebp-22h]
+  int v83; // [esp+13Ah] [ebp-1Eh]
+  int v84; // [esp+13Eh] [ebp-1Ah]
+  int v85; // [esp+142h] [ebp-16h]
+  int v86; // [esp+146h] [ebp-12h]
+  int v87; // [esp+14Ah] [ebp-Eh]
+  __int16 v88; // [esp+14Eh] [ebp-Ah]
+  int *v89; // [esp+150h] [ebp-8h]
+
+  v89 = &amp;argc;
+  sub_402940();
+  puts(
+    &quot;            .     \n&quot;
+    &quot;           _|_    ROBOTIC AUTHENTICATION SYSTEM\n&quot;
+    &quot;    /\\/\\  (. .)  /\n&quot;
+    &quot;    `||&#39;   |#|  \n&quot;
+    &quot;     ||__.-\&quot;-\&quot;-.___   \n&quot;
+    &quot;     `---| . . |--.\\  \n&quot;
+    &quot;         | : : |  ,||,\n&quot;
+    &quot;         `..-..&#39;  \\/\\/\n&quot;
+    &quot;          || ||   \n&quot;
+    &quot;          || ||    \n&quot;
+    &quot;         |__|__|  \n&quot;);
+  v49 = 0x539;
+  v50 = 0x60646D51;
+  v51 = 0x64216472;
+  v52 = 0x7364756F;
+  v53 = 0x64697521;
+  v54 = 0x73686721;
+  v55 = 0x51217572;
+  v56 = 0x76727260;
+  v57 = 0x3B65736E;
+  v58 = 1;
+  a_1 = 0x60646D51;
+  v41 = 0x64216472;
+  v42 = 0x7364756F;
+  v43 = 0x64697521;
+  v44 = 0x73686721;
+  v45 = 0x51217572;
+  v46 = 0x76727260;
+  v47 = 0x3B65736E;
+  v48 = 1;
+  v59 = 0x60646D51;
+  v60 = 0x64216472;
+  v61 = 0x7364756F;
+  v62 = 0x64697521;
+  v63 = 0x62647221;
+  v64 = 0x21656F6E;
+  v65 = 0x72726051;
+  v66 = 0x65736E76;
+  v67 = 315;
+  a_2 = 0x60646D51;                             // Please enter the second Password
+  v32 = 0x64216472;
+  v33 = 0x7364756F;
+  v34 = 0x64697521;
+  v35 = 0x62647221;
+  v36 = 0x21656F6E;
+  v37 = 0x72726051;
+  v38 = 0x65736E76;
+  v39 = 315;
+  v68 = 0x6F6F3074;
+  v69 = 0x666D3367;
+  v70 = 3;
+  v28 = 0x6F6F3074;
+  v29 = 0x666D3367;
+  v30 = 3;
+  v71 = 0x6F73646A;
+  v72 = 0x33326D64;
+  v73 = 0x6D6D652F;
+  v74 = 0x13F0101;
+  v24 = 0x6F73646A;
+  v25 = 0x33326D64;
+  v26 = 0x6D6D652F;
+  v27 = 0x13F0101;
+  v75 = 0x57656540;
+  v76 = 0x6E756264;
+  v77 = 0x44656473;
+  v78 = 0x71646279;
+  v79 = 0x6F6E6875;
+  v80 = 0x656F6049;
+  v81 = 0x173646D;
+  v17 = 0x57656540;
+  v18 = 0x6E756264;
+  v19 = 0x44656473;
+  v20 = 0x71646279;
+  v21 = 0x6F6E6875;
+  v22 = 0x656F6049;
+  v23 = 0x173646D;
+  v82 = 0x21746E58;
+  v83 = 0x2F6F6876;
+  v84 = 0x6F6E4221;
+  v85 = 0x75607366;
+  v86 = 0x75606D74;
+  v87 = 0x726F6E68;
+  v88 = 0x120;
+  v10 = 0x21746E58;
+  v11 = 0x2F6F6876;
+  v12 = 0x6F6E4221;
+  v13 = 0x75607366;
+  v14 = 0x75606D74;
+  v15 = 0x726F6E68;
+  v16 = 0x120;
+  v9 = 0x539;
+  strcpy(v8, &quot;r0b0RUlez!&quot;);
+  dword_40AD94 = (int)&amp;v9;
+  dword_40ADA0 = (int)&amp;v49;
+  dword_40AD8C = (char *)&amp;a_1;
+  dword_40AD90 = (char *)&amp;a_2;
+  dword_40AD98 = (int)&amp;v28;
+  lpProcName = (LPCSTR)&amp;v17;
+  lpModuleName = (LPCSTR)&amp;v24;
+  dword_40ADA4 = (char *)&amp;v10;
+  sub_401500(0);
+  v3 = lpProcName;
+  v4 = GetModuleHandleA(lpModuleName);
+  v5 = (void (__stdcall *)(HMODULE, LPCSTR))GetProcAddress(v4, v3);
+  v5((HMODULE)1, (LPCSTR)sub_40157F);
+  puts(dword_40AD8C);
+  scanf(&quot;%20s&quot;, &amp;v7);
+  if ( !strcmp(&amp;v7, v8) )
+  {
+    puts(&quot;You passed level1!&quot;);
+    sub_4015EA(0);
+  }
+  return 0;
+}
+</code></pre><p>在sub_401500函数中对刚刚定义的数据的每一位都和1异或<br><img src="https://s2.ax1x.com/2019/03/30/ADiFr4.png" alt><br>先把数据解密一下：</p>
+<pre><code>data1=&quot;516D6460726421646F756473217569642167687372752151607272766E73653B&quot;
+str1 =&quot;&quot;
+for x in range(0,len(data1),2):
+    str1 += chr(eval(&quot;0x&quot;+data1[x:x+2])^1)
+print str1
+
+data2 = &quot;516D6460726421646F75647321756964217264626E6F652151607272766E73653B&quot;
+
+str2 =&quot;&quot;
+for x in range(0,len(data2),2):
+    str2 += chr(eval(&quot;0x&quot;+data2[x:x+2])^1)
+print str2
+
+data3 = &quot;74306F6F67336D66&quot;
+
+str3 =&quot;&quot;
+for x in range(0,len(data3),2):
+    str3 += chr(eval(&quot;0x&quot;+data3[x:x+2])^1)
+print str3
+
+data4 = &quot;6A64736F646D32332F656D6D&quot;
+str4 = &quot;&quot;
+for x in range(0,len(data4),2):
+    str4 += chr(eval(&quot;0x&quot;+data4[x:x+2])^1)
+print str4
+
+data5 = &quot;406565576462756E736465447962647175686E6F49606F656D6473&quot;                            
+str5 = &quot;&quot;
+for x in range(0,len(data5),2):
+    str5 += chr(eval(&quot;0x&quot;+data5[x:x+2])^1)
+print str5
+
+data6 = &quot;586E742176686F2F21426E6F66736075746D6075686E6F7220&quot;
+str6 = &quot;&quot;
+for x in range(0,len(data6),2):
+    str6 += chr(eval(&quot;0x&quot;+data6[x:x+2])^1)
+print str6
+</code></pre><p>输出结果：<br><img src="https://s2.ax1x.com/2019/03/30/ADikqJ.png" alt><br>发现是一些需要输出的字符串</p>
+<p>接下来程序接收一个字符串，与字符串“r0b0RUlez!”进行比较，这是第一层限制，然后来到函数sub_4015EA，在这个里面构造了一个异常，当程序走到这里的时候，发生异常而进行跳转，在跳转之前改变了一个数据，第二跳是在这个函数中的，那么我们就跟进第一条<br><img src="https://s2.ax1x.com/2019/03/30/ADiVaR.png" alt> </p>
+<p>跟进之后来到一个函数中，再接收一个字符串，进入sub_401547进行比较<br><img src="https://s2.ax1x.com/2019/03/30/ADiZI1.png" alt> </p>
+<p>在sub_401547函数中对字符串“u1nnf2lg”每一位都与2异或<br><img src="https://s2.ax1x.com/2019/03/30/ADimPx.png" alt> </p>
+<p>解密得到“w3lld0ne”</p>
+<pre><code>flag = &quot;u1nnf2lg&quot;
+real_flag =&quot;&quot;
+for x in range(len(flag)):
+    real_flag+=chr(ord(flag[x])^2)
+print real_flag
+</code></pre><p>最后将字符串拼接起来<br> flag：r0b0RUlez!_w3lld0ne</p>
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/img/1.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+			
+	</span>
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	<ul>
+		
+	</ul>
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know 【表情】-->
+			
+		
+		
+	
+
+</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+
+	<script>
+		var appid = 'dX--',
+            appkey = 'dx--';	  
+        AnnieLeancloud(appid, appkey);         
+	</script>
+    
+
+
+ 
+
+<!-- show math formula -->
+
+
+
+
+<!-- TODO: There seems to be a bug when you close the post gallery! -->
+<link rel="stylesheet" href="/plugin/lightgallery/css/lightgallery.css">
+<script src="/plugin/lightgallery/js/jquery-1.11.0.min.js"></script>
+<script src="/plugin/lightgallery/js/lightgallery-all.min.js"></script>
+
+<script type="text/javascript">
+	var postTitle = $('.article-title a').text() ? $('.article-title a').text() : "No post title!";
+	$('.article-content img').each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		$(this).wrap('<div class="img-responsive" data-src="' + imgPath + '" data-responsive="' + imgPath + '" data-sub-html="<p>图片 ' + imgTitle + '</p><h4>文章' + postTitle + '</h4>"></div>');
+	});
+
+	$('.article-content').lightGallery({
+		mode: 'lg-slide',
+		selector: '.img-responsive',
+		share: false,
+		zoom: false,
+		download: false
+	});
+	//TODO：支持video
+</script>
+
+<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+		
+
+		<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		
+			<li>
+				<a href="http://github.com/" title="Github" target="_blank">
+					<i class="fa fa-github"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="http://github.com/" title="Weibo" target="_blank">
+					<i class="fa fa-weibo"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="mailto:http://github.com/" title="Email" target="_blank">
+					<i class="fa fa-envelope-o"></i>
+				</a>
+			</li>
+		
+
+		
+			<li>
+				<a href="http://github.com/" title="QQ" target="_blank">
+					<i class="fa fa-qq"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="http://github.com/" title="Twitter" target="_blank">
+					<i class="fa fa-twitter"></i>
+				</a>
+			</li>
+		
+	 
+</ul>
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by John Doe. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay. 					
+		</p>
+	</div>		
+</footer>
+		
+    <!-- set '1' to show motto in all pages! -->
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+    <!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup">
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      ESC
+   </span>
+		<div class="local-search-header">
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			
+
+   
+	<div id="topN"></div>
+	
+    <script>
+        var appid = 'dX--',
+            appkey = 'dx--',
+            limitCount = 10;
+        if( $('#topN').length ){
+            AV.initialize(appid, appkey);
+            var Counter = AV.Object.extend("Counter");  
+            topNPost(Counter, limitCount);
+        }
+    </script>
+   
+
+		</div>
+	</div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+    <script src="/js/love.js"></script>
+
+
+<!--back to top-->
+
+    
+	<div id="totop">
+  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
+	</div>
+	<div id="tobuttom">
+		<a href="javascript:;" name="TOBUTTOM" class="fa fa-arrow-down"></a>
+	</div>
+ 
+
+
+ 
+
+<script src="/js/vibrant.js"></script>
+<script src="/js/chinese.js"></script>
+<script src="/js/main.js"></script>
+	</body>
+	</html>
