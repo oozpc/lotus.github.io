@@ -20,11 +20,12 @@ body {
 	font-family: "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
 	font-size: 100%;
 	font-weight: normal;
-	color: black;
+	color: white;
 	line-height: 1.2em;
 	word-spacing: 1px;
 	letter-spacing: 1px;
 	word-break: break-all;
+	background: black;
 
 	/*
 		word-wrap: break-word;//针对单词本身换行做处理
@@ -674,18 +675,23 @@ footer>.copyright p {
 main {
 	width: 100%;
 	min-height: calc(100vh + 100px);
+	/* 主div的背景色*/
+
 }
 
 .layout-cart {
 	position: relative;
 	margin: 0em auto;
 	padding: 5em 0;
+
 }
 
 .layout-cart .post {
 	position: relative;
 	margin: 50px auto;
 	width: 1200px;
+
+
 }
 
 .layout-cart .post a {
@@ -713,7 +719,7 @@ main {
 	height: 398px;
 	width: 498px;
 	border: 1px solid #eaeaea;
-	background: #fff;
+	background: black; /*框的背景色*/
 	text-align: left;
 	z-index: 1;
 }
