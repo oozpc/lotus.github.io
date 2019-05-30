@@ -1,0 +1,176 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="rsa"><meta name="keywords" content="ctf"><meta name="author" content="zompil,undefined"><meta name="copyright" content="zompil"><title>rsa【Zompil】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+});
+</script><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+}</script></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#rsa原理及算法"><span class="toc-number">1.</span> <span class="toc-text">rsa原理及算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ctf中常见的rsa类型题："><span class="toc-number">2.</span> <span class="toc-text">ctf中常见的rsa类型题：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一、常规rsa"><span class="toc-number">2.1.</span> <span class="toc-text">一、常规rsa:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二、rsa共模攻击"><span class="toc-number">2.2.</span> <span class="toc-text">二、rsa共模攻击</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三、rsa小指数攻击"><span class="toc-number">2.3.</span> <span class="toc-text">三、rsa小指数攻击</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#五、rsa-n、e、d"><span class="toc-number">2.4.</span> <span class="toc-text">五、rsa n、e、d</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">zompil</div><div class="author-info-description"></div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/oozpc" target="_blank">GitHub<i class="icon-dot bg-color3"></i></a><a class="links-button button-hover" href="mailto:1151033756@qq.com" target="_blank">E-Mail<i class="icon-dot bg-color2"></i></a><a class="links-button button-hover" href="tencent://message/?uin=1151033756&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color5"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">3</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">1</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">1</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="title-name" href="/">Zompil</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">rsa</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2019-05-30 | 更新于 2019-05-30</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/zompil博客/">zompil博客</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/ctf/">ctf</a></div></div></div><div class="main-content"><h4 id="rsa原理及算法"><a href="#rsa原理及算法" class="headerlink" title="rsa原理及算法"></a>rsa原理及算法</h4><pre><code>选择两个大素数p和q，计算出模数N = p * q
+计算φ = (p−1) * (q−1) 即N的欧拉函数，然后选择一个e (1&lt;e&lt;φ)，且e和φ互质
+取e的模反数为d，计算方法: e * d ≡ 1 (mod φ)
+对明文m进行加密：c = pow(m, e, N)，得到的c即为密文
+对密文c进行解密，m = pow(c, d, N)，得到的m即为明文
+参数：
+p 和 q ：大整数N的两个因子（factor）
+N：大整数N，我们称之为模数（modulus
+e 和 d：互为模反数的两个指数（exponent）
+c 和 m：分别是密文和明文，这里一般指的是一个十进制的数
+其中
+（N，e）：公钥
+（N，d）：私钥
+</code></pre><h4 id="ctf中常见的rsa类型题："><a href="#ctf中常见的rsa类型题：" class="headerlink" title="ctf中常见的rsa类型题："></a>ctf中常见的rsa类型题：<br></h4><h5 id="一、常规rsa"><a href="#一、常规rsa" class="headerlink" title="一、常规rsa:"></a>一、常规rsa:<br></h5><p>通过题目给出的N分解来求出p、q<br><br>可通过以下方法分解N<br><br>1.一般的可通过 <a href="http://www.factordb.com/index.php" target="_blank" rel="noopener">http://www.factordb.com/index.php</a> 进行分解<br><br>2.对于数较大的用yafu工具进行分解<br><br>分解出p、q之后可通过以下脚本求出d：<br></p>
+<pre><code>import gmpy2
+p =gmpy2.mpz(p)
+q =gmpy2.mpz(q)
+e =gmpy2.mpz(e)
+phi_n= (p - 1) * (q - 1)
+d = gmpy2.invert(e, phi_n)
+print(&quot;d is:&quot;)
+print (d)
+</code></pre><p>求出d后就可以通过脚本解出明文了：</p>
+<pre><code>import gmpy2
+
+f=pow(m,d,n)
+
+#ans=&#39;{:x}&#39;.format(f).decode(&#39;hex&#39;)
+#print ans
+
+sk=hex(f)
+print sk[2:]
+flag=&quot;&quot;
+for i in range(2,len(sk),2):
+    a=chr(int(sk[i:i+2],16))
+     flag+=a
+print flag
+</code></pre><h5 id="二、rsa共模攻击"><a href="#二、rsa共模攻击" class="headerlink" title="二、rsa共模攻击"></a>二、rsa共模攻击</h5><p>脚本：</p>
+<pre><code>import gmpy2 
+n = 
+c1 = 
+c2 = 
+e1 = 
+e2 = 
+s = gmpy2.gcdext(e1,e2)
+s1 = s[1]
+s2 = s[2]
+if s1&lt;0:
+    s1 = - s1
+    c1 = gmpy2.invert(c1, n)
+elif s2&lt;0:
+    s2 = - s2
+    c2 = gmpy2.invert(c2, n)
+print s1
+m = (pow(c1,s1,n) * pow(c2,s2,n))%n
+print m
+
+sk=hex(m)
+flag=&quot;&quot;
+for i in range(2,len(sk),2):
+    a=chr(int(sk[i:i+2],16))
+    flag+=a
+print flag
+
+</code></pre><h5 id="三、rsa小指数攻击"><a href="#三、rsa小指数攻击" class="headerlink" title="三、rsa小指数攻击"></a>三、rsa小指数攻击</h5><p>e=1:<br><br>给出n、e、c的16进制值时<br><br>脚本：</p>
+<pre><code>#!/usr/bin/env python
+#coding:utf-8 
+import binascii 
+import gmpy2 
+
+N=
+e=0x1
+c=
+
+c = gmpy2.mpz(c) 
+N = gmpy2.mpz(N) 
+i = 0 
+while i&lt;1:
+    m = hex(c + gmpy2.mpz(hex(i))*N) 
+    print(m[2:])
+    try: 
+        print(binascii.a2b_hex(m[2:]).decode(&quot;utf8&quot;))
+    except binascii.Error as e: 
+        print(&quot;break&quot;) 
+    i += 1
+</code></pre><p>e=2:</p>
+<p>e=3:</p>
+<p>四、<br>给出私钥文件、e、c</p>
+<pre><code>import sys
+import math
+from Crypto.PublicKey import RSA
+public = RSA.importKey(open(&#39;public.pem&#39;).read())
+n = long(public.n)
+e = long(public.e)
+print n
+print e
+
+keypair = RSA.generate(1024)
+keypair.p = 
+keypair.q = 
+keypair.e = 
+keypair.n = keypair.p * keypair.q
+phi_n = long((keypair.p-1) * (keypair.q-1))
+
+i = 1
+while (True):
+    x = (phi_n * i ) + 1
+    if (x % keypair.e == 0):
+        keypair.d = x / keypair.e
+    break
+    i += 1
+
+private = open(&#39;private.pem&#39;,&#39;w&#39;)
+private.write(keypair.exportKey())
+private.close()
+</code></pre><p>也可用用CTF-RSA-tool-master工具来解出密钥：</p>
+<blockquote>
+<p>python solve.py –verbose –private -N 十进制n -e 十进制e </p>
+</blockquote>
+<p>解出密钥后通过openssl工具解出明文：</p>
+<h5 id="五、rsa-n、e、d"><a href="#五、rsa-n、e、d" class="headerlink" title="五、rsa n、e、d"></a>五、rsa n、e、d<br></h5><p>给出n、d、e的值<br>可求出p、q</p>
+<pre><code>import random
+
+def gcd(a, b):
+   if a &lt; b:
+     a, b = b, a
+   while b != 0:
+     temp = a % b
+     a = b
+     b = temp
+   return a
+
+def getpq(n,e,d):
+    p = 1
+    q = 1
+    while p==1 and q==1:
+        k = d * e - 1
+        g = random.randint ( 0 , n )
+        while p==1 and q==1 and k % 2 == 0:
+            k /= 2
+            y = pow(g,k,n)
+            if y!=1 and gcd(y-1,n)&gt;1:
+                p = gcd(y-1,n)
+                q = n/p
+    return p,q
+
+def main():
+
+    n=
+    e=
+    d=
+
+    p,q = getpq(n,e,d)
+    print p,q
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre></div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:undefined">zompil</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2019/05/30/rsa/">http://yoursite.com/2019/05/30/rsa/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com">Zompil</a>！</span></div></div></article><div id="pagination"><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2019/04/10/掘安杯 Misc/"><span>掘安杯Misc</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2018 ～ 2019 By zompil</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--></body></html>
