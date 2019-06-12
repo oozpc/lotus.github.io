@@ -1,0 +1,186 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="upload-labs靶场练习"><meta name="keywords" content="靶场练习"><meta name="author" content="zompil,undefined"><meta name="copyright" content="zompil"><title>upload-labs靶场练习【Zompil】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+});
+</script><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+}</script></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-01"><span class="toc-number">1.</span> <span class="toc-text">pass-01:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-02"><span class="toc-number">2.</span> <span class="toc-text">pass-02</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-03"><span class="toc-number">3.</span> <span class="toc-text">pass-03</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-04"><span class="toc-number">4.</span> <span class="toc-text">pass-04</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-05"><span class="toc-number">5.</span> <span class="toc-text">pass-05</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-06"><span class="toc-number">6.</span> <span class="toc-text">pass-06</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-07"><span class="toc-number">7.</span> <span class="toc-text">pass-07</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-08"><span class="toc-number">8.</span> <span class="toc-text">pass-08</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-09"><span class="toc-number">9.</span> <span class="toc-text">pass-09</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-10"><span class="toc-number">10.</span> <span class="toc-text">pass-10</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-11"><span class="toc-number">11.</span> <span class="toc-text">pass-11</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-12"><span class="toc-number">12.</span> <span class="toc-text">pass-12</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-13"><span class="toc-number">13.</span> <span class="toc-text">pass-13</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-14"><span class="toc-number">14.</span> <span class="toc-text">pass-14</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-15"><span class="toc-number">15.</span> <span class="toc-text">pass-15</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-16"><span class="toc-number">16.</span> <span class="toc-text">pass-16</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#gif："><span class="toc-number">16.0.1.</span> <span class="toc-text">gif：</span></a></li></ol></li></ol><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-17"><span class="toc-number">17.</span> <span class="toc-text">pass-17</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-18"><span class="toc-number">18.</span> <span class="toc-text">pass-18</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pass-19"><span class="toc-number">19.</span> <span class="toc-text">pass-19</span></a></li></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">zompil</div><div class="author-info-description"></div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/oozpc" target="_blank">GitHub<i class="icon-dot bg-color5"></i></a><a class="links-button button-hover" href="mailto:1151033756@qq.com" target="_blank">E-Mail<i class="icon-dot bg-color2"></i></a><a class="links-button button-hover" href="tencent://message/?uin=1151033756&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color7"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">4</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">2</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">1</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="title-name" href="/">Zompil</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">upload-labs靶场练习</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2019-06-01 | 更新于 2019-06-12</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/zompil博客/">zompil博客</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/靶场练习/">靶场练习</a></div></div></div><div class="main-content"><p>前言：==发现自己的基础很差于是想将基础的东西补一补，向chuddy大佬学习。==</p>
+<h4 id="pass-01"><a href="#pass-01" class="headerlink" title="pass-01:"></a>pass-01:</h4><p>在提示中发现在js代码中进行了限制</p>
+<pre><code>tips：本pass在客户端使用js对不合法图片进行检查！
+</code></pre><p>可以通过抓包将上传的.jpg后缀改为.php<br><img src="https://s2.ax1x.com/2019/06/11/Vg2ma8.png" alt="image"></p>
+<p><img src="https://s2.ax1x.com/2019/06/11/Vg2nIS.png" alt="image"><br>即可完成webshell上传</p>
+<h4 id="pass-02"><a href="#pass-02" class="headerlink" title="pass-02"></a>pass-02</h4><p>查看提示发现对MIME进行了检测</p>
+<pre><code>tips：本pass在服务端对数据包的MIME进行检查！
+</code></pre><p>抓包修改<code>Content-Type:</code>的内容即可上传webshell<br><img src="https://s2.ax1x.com/2019/06/11/VghFFf.png" alt="image"></p>
+<p><img src="https://s2.ax1x.com/2019/06/11/VghlkV.png" alt="image"></p>
+<h4 id="pass-03"><a href="#pass-03" class="headerlink" title="pass-03"></a>pass-03</h4><pre><code>tips：本pass禁止上传.asp|.aspx|.php|.jsp后缀文件！
+</code></pre><p>此处黑名单不完善</p>
+<blockquote>
+<p>常见的可执行文件<br><br>php: php、php2、php3、php5、phtml、pht<br><br>asp: asp、aspx、ascx、ashx、cer、asa<br><br>jsp: jsp、jspx</p>
+</blockquote>
+<p>于是可上传<code>.php5</code> 可完成上传<br>但此处有个鸡肋之处就是apache对于这些文件可能不解析需要在<code>httpd.conf</code>文件中将</p>
+<blockquote>
+<p>AddType application/x-httpd-php .php .phtml .php3 .php4 .php5 .php2</p>
+</blockquote>
+<p>添加或者将前面的#去掉</p>
+<h4 id="pass-04"><a href="#pass-04" class="headerlink" title="pass-04"></a>pass-04</h4><pre><code>tips：本pass禁止上传.php|.php5|.php4|.php3|.php2|php1|.html|.htm|.phtml|.pHp|.pHp5|.pHp4|.pHp3|.pHp2|pHp1|.Html|.Htm|.pHtml|.jsp|.jspa|.jspx|.jsw|.jsv|.jspf|.jtml|.jSp|.jSpx|.jSpa|.jSw|.jSv|.jSpf|.jHtml|.asp|.aspx|.asa|.asax|.ascx|.ashx|.asmx|.cer|.aSp|.aSpx|.aSa|.aSax|.aScx|.aShx|.aSmx|.cEr|.sWf|.swf后缀文件！
+</code></pre><p>提示中可以看出可执行的文件后缀基本都被限制了<br>但可以上传一个内容为 <code>SetHandler application/x-httpd-php</code>的.htaccess文件</p>
+<p>这样就可以执行图片里的php代码了</p>
+<p><img src="https://s2.ax1x.com/2019/06/11/VgTQRf.png" alt="image"></p>
+<p>于是上传图片马即可webshell</p>
+<h4 id="pass-05"><a href="#pass-05" class="headerlink" title="pass-05"></a>pass-05</h4><pre><code>tips：本pass禁止上传.php|.php5|.php4|.php3|.php2|php1|.html|.htm|.phtml|.pHp|.pHp5|.pHp4|.pHp3|.pHp2|pHp1|.Html|.Htm|.pHtml|.jsp|.jspa|.jspx|.jsw|.jsv|.jspf|.jtml|.jSp|.jSpx|.jSpa|.jSw|.jSv|.jSpf|.jHtml|.asp|.aspx|.asa|.asax|.ascx|.ashx|.asmx|.cer|.aSp|.aSpx|.aSa|.aSax|.aScx|.aShx|.aSmx|.cEr|.sWf|.swf|.htaccess后缀文件！
+</code></pre><p>查看提示发现连.htaccess也被限制了</p>
+<p>但源码中没有</p>
+<pre><code>$file_ext = strtolower($file_ext); //转换为小写
+</code></pre><p>在windows中访问时会不区分大小写</p>
+<p>于是可以大写绕过上传.Php的webshell文件即可</p>
+<h4 id="pass-06"><a href="#pass-06" class="headerlink" title="pass-06"></a>pass-06</h4><pre><code>tips：本pass禁止上传.php|.php5|.php4|.php3|.php2|php1|.html|.htm|.phtml|.pHp|.pHp5|.pHp4|.pHp3|.pHp2|pHp1|.Html|.Htm|.pHtml|.jsp|.jspa|.jspx|.jsw|.jsv|.jspf|.jtml|.jSp|.jSpx|.jSpa|.jSw|.jSv|.jSpf|.jHtml|.asp|.aspx|.asa|.asax|.ascx|.ashx|.asmx|.cer|.aSp|.aSpx|.aSa|.aSax|.aScx|.aShx|.aSmx|.cEr|.sWf|.swf后缀文件！
+</code></pre><p>源码中存在</p>
+<pre><code>$file_ext = strtolower($file_ext); //转换为小写
+</code></pre><p>在windows系统中会将文件后缀后面的<code>·</code>或者<code>空格</code>去掉<br>在源码中</p>
+<pre><code>$file_name = deldot($file_name);//删除文件名末尾的点
+</code></pre><p>所以可以在上传php文件时抓包</p>
+<p>在文件后缀加上<code>空格</code>即可上传成功</p>
+<p><img src="https://s2.ax1x.com/2019/06/11/Vg75hq.png" alt="image"></p>
+<h4 id="pass-07"><a href="#pass-07" class="headerlink" title="pass-07"></a>pass-07</h4><pre><code>tips：本pass禁止上传所有可以解析的后缀！
+</code></pre><p>在此pass中没有对文件后缀的<code>.</code>进行处理</p>
+<p>所以可抓包在文件后缀加<code>.</code>进行上传webshell文件</p>
+<p><img src="https://s2.ax1x.com/2019/06/11/VgLCvV.png" alt="image"></p>
+<h4 id="pass-08"><a href="#pass-08" class="headerlink" title="pass-08"></a>pass-08</h4><pre><code>tips：本pass禁止上传.php|.php5|.php4|.php3|.php2|php1|.html|.htm|.phtml|.pHp|.pHp5|.pHp4|.pHp3|.pHp2|pHp1|.Html|.Htm|.pHtml|.jsp|.jspa|.jspx|.jsw|.jsv|.jspf|.jtml|.jSp|.jSpx|.jSpa|.jSw|.jSv|.jSpf|.jHtml|.asp|.aspx|.asa|.asax|.ascx|.ashx|.asmx|.cer|.aSp|.aSpx|.aSa|.aSax|.aScx|.aShx|.aSmx|.cEr|.sWf|.swf|.htaccess后缀文件！
+</code></pre><p>源码没有</p>
+<pre><code>$file_ext = str_ireplace(&#39;::$DATA&#39;, &#39;&#39;, $file_ext);//去除字符串::$DATA
+</code></pre><p>可以在文件后缀加<code>::$DATA</code>绕过windows检测</p>
+<p><img src="https://s2.ax1x.com/2019/06/11/VgLFDU.png" alt="image"></p>
+<p>原理：</p>
+<p>php文件在windows中如果文件名有<code>::$DATA</code>,<br>会把::$DATA之后的数据当成文件流处理,不会检测后缀名.且保持”::$DATA”之前的文件名 他的目的就是不检查后缀名</p>
+<h4 id="pass-09"><a href="#pass-09" class="headerlink" title="pass-09"></a>pass-09</h4><pre><code>tips：本pass只允许上传.jpg|.png|.gif后缀的文件！
+</code></pre><pre><code>$is_upload = false;
+$msg = null;
+if (isset($_POST[&#39;submit&#39;])) {
+    if (file_exists(UPLOAD_PATH)) {
+        $deny_ext = array(&quot;.php&quot;,&quot;.php5&quot;,&quot;.php4&quot;,&quot;.php3&quot;,&quot;.php2&quot;,&quot;.html&quot;,&quot;.htm&quot;,&quot;.phtml&quot;,&quot;.pHp&quot;,&quot;.pHp5&quot;,&quot;.pHp4&quot;,&quot;.pHp3&quot;,&quot;.pHp2&quot;,&quot;.Html&quot;,&quot;.Htm&quot;,&quot;.pHtml&quot;,&quot;.jsp&quot;,&quot;.jspa&quot;,&quot;.jspx&quot;,&quot;.jsw&quot;,&quot;.jsv&quot;,&quot;.jspf&quot;,&quot;.jtml&quot;,&quot;.jSp&quot;,&quot;.jSpx&quot;,&quot;.jSpa&quot;,&quot;.jSw&quot;,&quot;.jSv&quot;,&quot;.jSpf&quot;,&quot;.jHtml&quot;,&quot;.asp&quot;,&quot;.aspx&quot;,&quot;.asa&quot;,&quot;.asax&quot;,&quot;.ascx&quot;,&quot;.ashx&quot;,&quot;.asmx&quot;,&quot;.cer&quot;,&quot;.aSp&quot;,&quot;.aSpx&quot;,&quot;.aSa&quot;,&quot;.aSax&quot;,&quot;.aScx&quot;,&quot;.aShx&quot;,&quot;.aSmx&quot;,&quot;.cEr&quot;,&quot;.sWf&quot;,&quot;.swf&quot;,&quot;.htaccess&quot;);
+        $file_name = trim($_FILES[&#39;upload_file&#39;][&#39;name&#39;]);
+        $file_name = deldot($file_name);//删除文件名末尾的点
+        $file_ext = strrchr($file_name, &#39;.&#39;);
+        $file_ext = strtolower($file_ext); //转换为小写
+        $file_ext = str_ireplace(&#39;::$DATA&#39;, &#39;&#39;, $file_ext);//去除字符串::$DATA
+        $file_ext = trim($file_ext); //首尾去空
+
+        if (!in_array($file_ext, $deny_ext)) {
+            if (move_uploaded_file($_FILES[&#39;upload_file&#39;][&#39;tmp_name&#39;], UPLOAD_PATH . &#39;/&#39; . $_FILES[&#39;upload_file&#39;][&#39;name&#39;])) {
+                $img_path = UPLOAD_PATH . &#39;/&#39; . $file_name;
+                $is_upload = true;
+            }
+        } else {
+            $msg = &#39;此文件不允许上传&#39;;
+        }
+    } else {
+        $msg = UPLOAD_PATH . &#39;文件夹不存在,请手工创建！&#39;;
+    }
+}
+</code></pre><p>查看源码发现</p>
+<pre><code>$img_path = UPLOAD_PATH . &#39;/&#39; . $file_name;
+</code></pre><p>路径拼接的是处理后的文件名，于是构造<code>.php. .</code> (.空格.)的后缀名即可绕过</p>
+<p><img src="https://s2.ax1x.com/2019/06/11/VgL9g0.png" alt="image"></p>
+<h4 id="pass-10"><a href="#pass-10" class="headerlink" title="pass-10"></a>pass-10</h4><pre><code>tips：本pass会从文件名中去除.php|.php5|.php4|.php3|.php2|php1|.html|.htm|.phtml|.pHp|.pHp5|.pHp4|.pHp3|.pHp2|pHp1|.Html|.Htm|.pHtml|.jsp|.jspa|.jspx|.jsw|.jsv|.jspf|.jtml|.jSp|.jSpx|.jSpa|.jSw|.jSv|.jSpf|.jHtml|.asp|.aspx|.asa|.asax|.ascx|.ashx|.asmx|.cer|.aSp|.aSpx|.aSa|.aSax|.aScx|.aShx|.aSmx|.cEr|.sWf|.swf|.htaccess字符！
+</code></pre><p>源码发现</p>
+<pre><code>$file_name = str_ireplace($deny_ext,&quot;&quot;, $file_name);
+</code></pre><p>将黑名单后缀都替换为空<br>可以使用双写后缀进行绕过：php文件后缀改为.pphphp即可</p>
+<h4 id="pass-11"><a href="#pass-11" class="headerlink" title="pass-11"></a>pass-11</h4><pre><code>tips：本pass上传路径可控
+</code></pre><p>源码中的路径是拼接的</p>
+<pre><code>$img_path = $_GET[&#39;save_path&#39;].&quot;/&quot;.rand(10, 99).date(&quot;YmdHis&quot;).&quot;.&quot;.$file_ext;
+</code></pre><p>可控，<br>$img_path = /11.php%00jpg</p>
+<p>可使用00截断</p>
+<p>当文件系统读到%00时，会认为文件已经结束，从而将11.php%00jpg的内容写入到11.php中</p>
+<p><img src="https://s2.ax1x.com/2019/06/11/V2SVLq.png" alt="image"></p>
+<h4 id="pass-12"><a href="#pass-12" class="headerlink" title="pass-12"></a>pass-12</h4><pre><code>tips：本pass上传路径可控！
+</code></pre><p>和pass-11一样在post中进行00截断</p>
+<p>但需要在hex中进行截断，因为post不会像get对%00进行自动解码。</p>
+<h4 id="pass-13"><a href="#pass-13" class="headerlink" title="pass-13"></a>pass-13</h4><pre><code>tips：本pass检查图标内容开头2个字节！
+</code></pre><p>上传图片马即可</p>
+<p>图片马制作方法：</p>
+<pre><code>copy 1.jpg\b + shell.php\a ma.jpg
+</code></pre><p>需结合文件包含漏洞一起利用</p>
+<h4 id="pass-14"><a href="#pass-14" class="headerlink" title="pass-14"></a>pass-14</h4><pre><code>tips：本pass使用getimagesize()检查是否为图片文件！
+</code></pre><p>getimagesize()是获取文件类型</p>
+<p>依然可以利用上传图片马的方法</p>
+<h4 id="pass-15"><a href="#pass-15" class="headerlink" title="pass-15"></a>pass-15</h4><pre><code>tips：本pass使用exif_imagetype()检查是否为图片文件！
+</code></pre><p>exif_imagetype()也是判度文件类型的</p>
+<p>所以也可以上传图片马</p>
+<h4 id="pass-16"><a href="#pass-16" class="headerlink" title="pass-16"></a>pass-16</h4><pre><code>tips：本pass重新渲染了图片！
+</code></pre><p>此pass为图片的二次渲染</p>
+<h6 id="gif："><a href="#gif：" class="headerlink" title="gif："></a>gif：</h6><p>对于gif比较简单比较上传前后不变的部分再将php代码写在不变的部分中上传即可</p>
+<p>jpg和png的比较复杂可以参照下面这篇文章</p>
+<p><a href="https://xz.aliyun.com/t/2657" target="_blank" rel="noopener">二次渲染详情参照</a></p>
+<h4 id="pass-17"><a href="#pass-17" class="headerlink" title="pass-17"></a>pass-17</h4><pre><code>tips：需要代码审计！
+</code></pre><pre><code>$is_upload = false;
+$msg = null;
+
+if(isset($_POST[&#39;submit&#39;])){
+    $ext_arr = array(&#39;jpg&#39;,&#39;png&#39;,&#39;gif&#39;);
+    $file_name = $_FILES[&#39;upload_file&#39;][&#39;name&#39;];
+    $temp_file = $_FILES[&#39;upload_file&#39;][&#39;tmp_name&#39;];
+    $file_ext = substr($file_name,strrpos($file_name,&quot;.&quot;)+1);
+    $upload_file = UPLOAD_PATH . &#39;/&#39; . $file_name;
+
+    if(move_uploaded_file($temp_file, $upload_file)){
+        if(in_array($file_ext,$ext_arr)){
+             $img_path = UPLOAD_PATH . &#39;/&#39;. rand(10, 99).date(&quot;YmdHis&quot;).&quot;.&quot;.$file_ext;
+             rename($upload_file, $img_path);
+             $is_upload = true;
+        }else{
+            $msg = &quot;只允许上传.jpg|.png|.gif类型文件！&quot;;
+            unlink($upload_file);
+        }
+    }else{
+        $msg = &#39;上传失败！&#39;;
+    }
+}
+</code></pre><p>分析源码可知先将图片上传到服务器然后rename修改名称，再由unlike进行删除</p>
+<p>因此可以利用条件竞争通过bp不断上传webshell文件同时不断访问此webshell文件，如果竞争成功即可webshell.</p>
+<h4 id="pass-18"><a href="#pass-18" class="headerlink" title="pass-18"></a>pass-18</h4><pre><code>tips：需要代码审计！
+</code></pre><p>白名单限制，同样存在条件竞争，上传webshell图片，然后和pass-17一样的方法即可</p>
+<h4 id="pass-19"><a href="#pass-19" class="headerlink" title="pass-19"></a>pass-19</h4><pre><code>tips：本pass的取文件名通过$_POST来获取。
+</code></pre><pre><code>$is_upload = false;
+$msg = null;
+if (isset($_POST[&#39;submit&#39;])) {
+    if (file_exists(UPLOAD_PATH)) {
+        $deny_ext = array(&quot;php&quot;,&quot;php5&quot;,&quot;php4&quot;,&quot;php3&quot;,&quot;php2&quot;,&quot;html&quot;,&quot;htm&quot;,&quot;phtml&quot;,&quot;pht&quot;,&quot;jsp&quot;,&quot;jspa&quot;,&quot;jspx&quot;,&quot;jsw&quot;,&quot;jsv&quot;,&quot;jspf&quot;,&quot;jtml&quot;,&quot;asp&quot;,&quot;aspx&quot;,&quot;asa&quot;,&quot;asax&quot;,&quot;ascx&quot;,&quot;ashx&quot;,&quot;asmx&quot;,&quot;cer&quot;,&quot;swf&quot;,&quot;htaccess&quot;);
+
+        $file_name = $_POST[&#39;save_name&#39;];
+        $file_ext = pathinfo($file_name,PATHINFO_EXTENSION);
+
+        if(!in_array($file_ext,$deny_ext)) {
+            $img_path = UPLOAD_PATH . &#39;/&#39; .$file_name;
+            if (move_uploaded_file($_FILES[&#39;upload_file&#39;][&#39;tmp_name&#39;], $img_path)) { 
+                $is_upload = true;
+            }else{
+                $msg = &#39;上传失败！&#39;;
+            }
+        }else{
+            $msg = &#39;禁止保存为该类型文件！&#39;;
+        }
+
+    } else {
+        $msg = UPLOAD_PATH . &#39;文件夹不存在,请手工创建！&#39;;
+    }
+}
+</code></pre><pre><code>$file_name = $_POST[&#39;save_name&#39;];
+</code></pre><p>通过分析源码可以发现save_name是可控的</p>
+<p>1.可进行00截断</p>
+<p>2.可以在文件后缀加<code>\.</code><br>move_uploaded_file()会忽略后缀中的<code>\.</code></p>
+<p><img src="https://s2.ax1x.com/2019/06/12/VWSbAP.png" alt="image"></p>
+<p>参考文章：<a href="https://xz.aliyun.com/t/2435#toc-13" target="_blank" rel="noopener">https://xz.aliyun.com/t/2435#toc-13</a><br><a href="http://chuddy.top/2019/05/28/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/" target="_blank" rel="noopener">http://chuddy.top/2019/05/28/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/</a></p>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:undefined">zompil</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2019/06/01/upload-labs靶场练习/">http://yoursite.com/2019/06/01/upload-labs靶场练习/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com">Zompil</a>！</span></div></div></article><div id="pagination"><div class="prev-post pull-left"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2019/06/05/rsa/"><i class="fas fa-angle-left">&nbsp;</i><span>rsa</span></a></div><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2019/04/10/掘安杯 Misc/"><span>掘安杯Misc</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2018 ～ 2019 By zompil</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--></body></html>
